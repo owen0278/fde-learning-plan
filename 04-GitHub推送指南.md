@@ -2,6 +2,15 @@
 
 > 本地部分已配置完成。下面是从「配公钥」到「第一次推送」的完整步骤。
 
+## ✅ 状态：已全部配置完成并推送成功
+
+- SSH 连接已验证（`ssh -T git@github.com` 返回 `Hi owen0278!`）
+- 远端仓库：https://github.com/owen0278/fde-learning-plan
+- 远端地址：`git@github.com:owen0278/fde-learning-plan.git`，默认分支 `main`，已设置 upstream
+- 首次推送已完成，共 136 个文件 / 2 个提交
+
+下面内容保留作为日后排查参考。
+
 ## 已完成的配置
 
 | 项目 | 值 |
