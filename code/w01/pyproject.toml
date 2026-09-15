@@ -1,0 +1,40 @@
+[project]
+name = "fde-w01"
+version = "0.1.0"
+description = "W01 Python 现代工程化 · 贯穿式实战项目：mini-llm-gateway"
+requires-python = ">=3.12"
+dependencies = [
+    "pydantic>=2.9",
+    "httpx>=0.27",
+    "fastapi>=0.115",
+    "uvicorn>=0.32",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3",
+    "pytest-asyncio>=0.24",
+    "pytest-cov>=6.0",
+    "ruff>=0.8",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["."]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+ignore = [
+    # B008 flags `x = Depends(...)` in route signatures - that IS the FastAPI
+    # idiom documented by the framework. Suppressing the rule is correct here.
+    "B008",
+]
+
+[tool.ruff.lint.per-file-ignores]
+# starter files import things you have not used yet on purpose: they are the
+# building blocks for your own solution. Do not flag them.
+"starter.py" = ["F401"]
